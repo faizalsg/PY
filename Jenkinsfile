@@ -1,4 +1,4 @@
-@@ -4,32 +4,42 @@ pipeline {
+pipeline {
         stage('Build') {
             agent {
                 docker {
