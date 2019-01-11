@@ -1,4 +1,5 @@
- stage('Build') {
+@@ -4,32 +4,42 @@ pipeline {
+        stage('Build') {
             agent {
                 docker {
                     image 'python:3.4-slim'
