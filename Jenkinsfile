@@ -42,5 +42,14 @@ pipeline {
                 }
             }
         }
+        stage('Docker Push') {
+      agent any
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'ttp.road', usernameVariable: 'mfaizalsg')]) {
+          sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+          sh 'docker push mfaizalsg/mfaizalsg:latest'
+        }
+      }
+    }
     }
 }
